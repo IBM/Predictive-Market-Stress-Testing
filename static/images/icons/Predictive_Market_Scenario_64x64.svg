@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Service/Predictive Market Scenarios/64x64</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.377,0.316 C0.377,3.247 9.223,5.622 20.13,5.622 C31.04,5.622 39.884,3.247 39.884,0.316 L0.377,0.316 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Service/Predictive-Market-Scenarios/64x64">
+            <circle id="Oval-Copy-3" fill="#F8FAFA" cx="32" cy="32" r="32"></circle>
+            <g id="Page-1" transform="translate(10.000000, 11.000000)">
+                <g id="Group-27" transform="translate(0.000000, 0.975900)">
+                    <path d="M29.9492,35.8561 L5.7622,35.8561 C4.6312,35.8561 3.7142,34.9391 3.7142,33.8071 L3.7142,9.6211 C3.7142,8.4891 4.6312,7.5721 5.7622,7.5721 L29.9492,7.5721 C31.0802,7.5721 31.9972,8.4891 31.9972,9.6211 L31.9972,33.8071 C31.9972,34.9391 31.0802,35.8561 29.9492,35.8561" id="Fill-1" fill="#FFFFFF"></path>
+                    <path d="M29.9492,35.8561 L5.7622,35.8561 C4.6312,35.8561 3.7142,34.9391 3.7142,33.8071 L3.7142,9.6211 C3.7142,8.4891 4.6312,7.5721 5.7622,7.5721 L29.9492,7.5721 C31.0802,7.5721 31.9972,8.4891 31.9972,9.6211 L31.9972,33.8071 C31.9972,34.9391 31.0802,35.8561 29.9492,35.8561 Z" id="Stroke-3" stroke="#047CC0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <g id="Group-20" transform="translate(33.000000, 7.000000)">
+                        <path d="M0.2119,0.5719 L9.2089,0.5719 C9.9369,0.5719 10.5269,1.1619 10.5269,1.8899 L10.5269,27.5389 C10.5269,28.2659 9.9369,28.8559 9.2089,28.8559 L0.2119,28.8559" id="Fill-17" fill="#E1ECF8"></path>
+                        <path d="M0.2119,0.5719 L9.2089,0.5719 C9.9369,0.5719 10.5269,1.1619 10.5269,1.8899 L10.5269,27.5389 C10.5269,28.2659 9.9369,28.8559 9.2089,28.8559 L0.2119,28.8559" id="Stroke-19" stroke="#047CC0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                    <g id="Group-24">
+                        <path d="M29.6679,5.7594 L26.0729,1.2684 C25.8229,0.9554 25.4439,0.7744 25.0449,0.7744 L2.0379,0.7744 C0.9059,0.7744 0.3009,2.1074 1.0469,2.9594 L3.4959,5.7594" id="Fill-21" fill="#FFFFFF"></path>
+                        <path d="M29.6679,5.7594 L26.0729,1.2684 C25.8229,0.9554 25.4439,0.7744 25.0449,0.7744 L2.0379,0.7744 C0.9059,0.7744 0.3009,2.1074 1.0469,2.9594 L3.4959,5.7594" id="Stroke-23" stroke="#047CC0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                    <path d="M30.4579,1.7419 L42.8279,1.7419 C43.7479,1.7419 44.3849,2.6609 44.0619,3.5229 L42.9819,6.4019" id="Stroke-25" stroke="#047CC0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <g id="Group-30" opacity="0.100147192" transform="translate(3.000000, 35.975900)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-29"></g>
+                    <polygon id="Fill-28" fill="#5A5A5A" mask="url(#mask-2)" points="-5 11 45.261 11 45.261 -5.061 -5 -5.061"></polygon>
+                </g>
+            </g>
+            <g id="Group" transform="translate(18.000000, 25.000000)" stroke="#047CC0">
+                <path d="M1.5,13.5 L9.5,10.5" id="Stroke-12-Copy" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.48406012,12.3682298 C3.10898754,12.9123585 3.17589896,13.8604807 2.63177024,14.4854081 C2.08890399,15.1103355 1.14204426,15.1759845 0.515854359,14.6318558 C-0.110335543,14.0889895 -0.174722005,13.1408673 0.368144241,12.5159399 C0.912272966,11.8910125 1.8591327,11.824101 2.48406012,12.3682298" id="Fill-16-Copy" fill="#047CC0"></path>
+                <path d="M8.5,10.5 L12.5,1.5" id="Stroke-4-Copy" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.5,10.5 L17.5,15.5" id="Stroke-6-Copy" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.5,10.5 L18.5,7.5" id="Stroke-8-Copy" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18.4847977,14.3687605 C19.1097004,14.9128677 19.1753468,15.8596901 18.6312395,16.4845928 C18.0883947,17.1094956 17.1415724,17.1764044 16.5154072,16.6322971 C15.8905044,16.0881899 15.824858,15.1401051 16.3677029,14.5152023 C16.9118101,13.8902996 17.8598949,13.8246532 18.4847977,14.3687605 Z" id="Stroke-26-Copy-3" fill="#047CC0" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M19.4847977,6.26876055 C20.1097004,6.81286781 20.1753468,7.75969017 19.6312395,8.38459293 C19.0883947,9.0094957 18.1415724,9.07640448 17.5154072,8.53229722 C16.8905044,7.98818997 16.824858,7.04010518 17.3677029,6.41520241 C17.9118101,5.79029965 18.8598949,5.7246533 19.4847977,6.26876055 Z" id="Stroke-26-Copy-2" fill="#047CC0" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10.5545879,8.67545243 C11.7001842,9.67147859 11.8220561,11.4098157 10.824922,12.5554119 C9.82889586,13.7010082 8.09055878,13.8228802 6.94496251,12.8257461 C5.79936624,11.8297199 5.67860222,10.0913828 6.67462838,8.94578656 C7.67065454,7.79908237 9.40899162,7.67831835 10.5545879,8.67545243 Z" id="Stroke-22-Copy" stroke-width="1.3" fill="#FED500" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.4847977,0.36876046 C14.1097004,0.912867712 14.1753468,1.85969008 13.6312395,2.48459284 C13.0883947,3.1094956 12.1415724,3.17640438 11.5154072,2.63229713 C10.8905044,2.08818988 10.824858,1.14010508 11.3677029,0.515202319 C11.9118101,-0.109700443 12.8598949,-0.175346793 13.4847977,0.36876046 Z" id="Stroke-26-Copy-4" fill="#047CC0" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

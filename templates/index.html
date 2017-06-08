@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    Predictive Market Stress Testing
+  </title>
+  <link href="{{ url_for('static', filename='images/WatsonLogo.png') }}" rel="icon" type="image/png">
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+  </script>
+  <script src="https://d3js.org/d3.v4.js">
+  </script>
+  </link>
+  <link href="{{ url_for('static', filename='css/new.css') }}" rel="stylesheet"> </link>
+  </link>
+</head>
+
+<body class="sandboxtwo">
+  <div class="container">
+
+    <div class="header-bar">
+      <div class="header-bar__home">
+        <div class="header-bar__home__button">
+          <strong>
+                            Predictive Market Stress Testing&nbsp;
+                        </strong>
+        </div>
+        <div class="header-bar__new">
+          <button class="new-analysis Button secondary" aria-label="New Scenario">
+                            New Scenario
+                        </button>
+        </div>
+      </div>
+    </div>
+    <div class="article-input">
+      <div class="article-input__hero">
+        Let's analyze your holdings
+      </div>
+      <div class="article-input__triple">
+        <div class="article-input__portfolio">
+          <div class="enter-portfolio">
+            <div class="article-input__header">
+              Select Portfolio
+            </div>
+            <select class="" aria-label="select portfolio">
+                            <option disabled="" selected="" value="disabled">
+                                Loading...
+                            </option>
+                        </select>
+            <div>
+              &nbsp;&nbsp;
+            </div>
+            <div>
+              &nbsp;&nbsp;
+            </div>
+          </div>
+
+          <div class="article-input__header">
+            Create Scenario
+          </div>
+
+          <div class="enter-scenario">
+            I want to observe the impact of a <input placeholder="(shock)" type="text" aria-label="enter shock magnitude">
+            </input> % <a class="rise-fall"><select class="" aria-label="rise/fall">
+                            <option value disabled selected>[rise/fall]</option>
+                            <option>rise</option>
+                            <option>fall</option>
+                        </select> </a> in the value of the <a class="risk-factor">
+                                      <select class="" aria-label="select risk factor">
+                                          <option disabled="" selected="" value="disabled">
+                                              Loading...
+                                          </option>
+                                      </select></a>
+
+            <div class="shock-mag">
+              e.g. I want to observe the impact of a <strong>2% fall</strong> in the value of the <strong>spot price of Brent Crude Oil</strong>
+            </div>
+            <div class="article-input__run">
+              <button class="run-analysis Button" aria-label="Run Analysis">
+                                    Run Analysis
+                                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-loading tab">
+      <div class="loader">
+        <img src="{{ url_for('static', filename='images/spin.svg') }}" alt="loading">
+        </img>
+        <h2>
+                        Your analysis will be completed shortly.
+                    </h2>
+      </div>
+    </div>
+
+    <div class="wii-info tab">
+      <div class="wii-info__text">
+        <h1>
+                        Predictive Market Stress Testing allows a user to generate a correlated market stress tests and analyze the impact against an investment portfolio
+                    </h1>
+      </div>
+
+      <div class="wii-info__tiles">
+        <h3>
+                        Services Used
+                    </h3>
+        <div class="wii-tile">
+          <div class="icon-bubble">
+            <img src="{{ url_for('static', filename='images/icons/portfolio_service.svg') }}" alt="portfolio service">
+          </div>
+          <p>
+            Investment Portfolio
+          </p>
+        </div>
+        <div class="wii-tile">
+          <div class="icon-bubble">
+            <img src="{{ url_for('static', filename='images/icons/price_and_analytics_under_stress.svg') }}" alt="price and analytics under stress">
+          </div>
+          <p>
+            Simulated Instrument Analytics
+          </p>
+        </div>
+        <div class="wii-tile">
+          <div class="icon-bubble">
+            <img src="{{ url_for('static', filename='images/icons/Predictive_Market_Scenario_64x64.svg') }}" alt="price and analytics under stress">
+          </div>
+          <p>
+            Predictive Market Scenarios
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab tab-one" id="tab-one">
+
+        <div class="date">
+          <a>
+                          05/17/1978
+                      </a>
+        </div>
+
+        <div class="pl-table">
+          <div class="pl-table__header">
+            <div class="tab-title title1">
+              <h3>
+                                    Projected impact on your portfolio
+                                </h3>
+            </div>
+
+          </div>
+          <div class="port-table__wrapper">
+            <div class="port-table">
+              <table>
+                <thead>
+                  <tr style="width: 100%">
+                    <th>
+                      Name
+                    </th>
+                    <th>
+                      Company
+                    </th>
+                    <th>
+                      Quantity
+                    </th>
+                    <th>
+                      Current Price
+                    </th>
+                    <th>
+                      Stressed Price
+                    </th>
+                    <th>
+                      Profit/Loss
+                    </th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <td>
+                      a
+                    </td>
+                    <td>
+                      b
+                    </td>
+                    <td>
+                      c
+                    </td>
+                    <td>
+                      d
+                    </td>
+                    <td>
+                      e
+                    </td>
+                    <td>
+                      f
+                    </td>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>
+                      a
+                    </td>
+                    <td>
+                      b
+                    </td>
+                    <td>
+                      c
+                    </td>
+                    <td>
+                      d
+                    </td>
+                    <td>
+                      e
+                    </td>
+                    <td>
+                      f
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="pl-table">
+          <div class="pl-table__header">
+            <div class="tab-title">
+              <h3>
+                                      Change in Market Conditions
+                                  </h3>
+            </div>
+          </div>
+          <div class="port-table__wrapper">
+            <div class="port-table2">
+              <table class="t2">
+                <thead>
+                  <tr>
+                    <th>
+                      Riskfactor Name
+                    </th>
+                    <th>
+                      Implied Shift (%)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      a
+                    </td>
+                    <td>
+                      b
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+<script src="{{ url_for('static', filename='js/update.js') }}"></script>
+<script src="{{ url_for('static', filename='js/run_analysis.js') }}"></script>
+<script>
+  $(document).ready(function() {
+    //$('.tab-bead').width($('.tab-title:nth-child(1)').width() + 24);
+    updateText();
+  });
+
+  $('.new-analysis').click(function() {
+    //$('.sandboxtwo').toggleClass('analysis');
+    location.reload();
+  });
+</script>

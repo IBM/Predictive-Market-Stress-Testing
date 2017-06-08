@@ -1,0 +1,22 @@
+  declared-services:
+    Investment-Portfolio:
+      label: fss-portfolio-service
+      plan: fss-portfolio-service-free-plan
+    Predictive-Market-Scenarios:
+      label: fss-predictive-scenario-analytics-service
+      plan: fss-predictive-scenario-analytics-service-free-plan
+    Simulated-Instrument-Analytics:
+      label: fss-scenario-analytics-service
+      plan: fss-scenario-analytics-service-free-plan
+  applications:
+  - path: .
+    memory: 128M
+    instances: 1
+    name: Predictive-Market-Stress-Testing
+    disk_quota: 1024M
+    domain: mybluemix.net
+    services:
+    - Investment-Portfolio
+    - Predictive-Market-Scenarios
+    - Simulated-Instrument-Analytics
+    buildpack: python_buildpack

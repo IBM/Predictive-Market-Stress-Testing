@@ -1,0 +1,41 @@
+
+.sandboxtwo .enter-scenario input {
+  display: inline;
+  max-width: 6.00rem;
+  padding: 2px;
+  text-align: center;
+   }
+
+.sandboxtwo .enter-scenario select {
+   display: inline;
+   padding-left: 6px;
+    }
+
+.sandboxtwo .enter-scenario .rise-fall select {
+   max-width: 6.50rem;
+   text-align: center;
+   text-align-center: center;
+   align-items: center;
+    }
+
+.sandboxtwo .enter-scenario .risk-factor select {
+   max-width:  16.00rem;
+    }
+
+.shock-mag {
+  font-size: 15px;
+  color: #c8d2d2
+   }
+
+.t2 {
+     width: 50%; }
+
+.date {
+ text-align: right;
+}
+
+.date a {
+  color: #868686;  
+  font-size: 16px;
+  font-weight: 400;
+}
