@@ -9,7 +9,7 @@ When the reader has completed this journey, they will understand how to:
 * Send data along with a scenario to the Simulated Instrument Analytics service to retrieve analytics
 
 <p align="center">
-  <img width="500" height="300" src="static/images/architecture.png">
+  <img width="300" height="300" src="static/images/architecture.png">
 </p>
 
 ## Included Components
