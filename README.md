@@ -21,7 +21,7 @@ When the reader has completed this journey, they will understand how to:
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/raheelzubairy/Predictive-Market-Stress-Testing)
 
-Be sure to [load investment profile](#3-load-investment-portfolio) before running the application.
+Be sure to [load investment portfolio](#3-load-investment-portfolio) before running the application.
 
 # Running the Application
 Follow these steps to setup and run this developer journey. The steps are described in detail below.
