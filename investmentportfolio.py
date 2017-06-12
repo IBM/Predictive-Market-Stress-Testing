@@ -18,6 +18,9 @@ import argparse
 from dotenv import load_dotenv
 import os
 
+IP_R_username="check"
+print ("User name: " + IP_R_username)
+
 #Investment Portfolio Service credentials
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 IP_W_username=os.environ.get("CRED_PORTFOLIO_USERID_W")
@@ -30,7 +33,7 @@ def Get_Portfolios():
     Retreives portfolio data by calling the Investment Portfolio service
     """
     print ("Get Portfolios")
-    print ("User name: " + IP_R_username)
+    print ("User name: " + str(IP_R_username))
     #call the url
     BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/"
     headers = {
