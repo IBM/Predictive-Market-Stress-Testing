@@ -29,10 +29,10 @@ if 'VCAP_SERVICES' in os.environ:
     print(vcap_servicesData)
 
     # Look for the IP service instance.
-    IP_W_username=vcap_servicesData['fss-portfolio-service']['credentials']['writer']['userid']
-    IP_W_password=vcap_servicesData['fss-portfolio-service']['credentials']['writer']['password']
-    IP_R_username=vcap_servicesData['fss-portfolio-service']['credentials']['reader']['userid']
-    IP_R_password=vcap_servicesData['fss-portfolio-service']['credentials']['reader']['password']
+    IP_W_username=vcap_servicesData['fss-portfolio-service'][0]['credentials']['writer']['userid']
+    IP_W_password=vcap_servicesData['fss-portfolio-service'][0]['credentials']['writer']['password']
+    IP_R_username=vcap_servicesData['fss-portfolio-service'][0]['credentials']['reader']['userid']
+    IP_R_password=vcap_servicesData['fss-portfolio-service'][0]['credentials']['reader']['password']
 
     # Log the fact that we successfully found some Cloudant service information.
     print("Got IP credentials\n")
