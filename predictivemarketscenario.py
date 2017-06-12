@@ -27,7 +27,7 @@ if 'VCAP_SERVICES' in os.environ:
 
     # Look for the PMS service instance.
     access_token=vcap_servicesData['fss-predictive-scenario-analytics-service'][0]['credentials']['accessToken']
-    uri=vcap_servicesData['fss-portfolio-service'][0]['credentials']['uri']
+    uri=vcap_servicesData['fss-predictive-scenario-analytics-service'][0]['credentials']['uri']
 
     # Log the fact that we successfully found credentials
     print("Got PMS credentials\n")
