@@ -22,11 +22,26 @@ IP_R_username="check"
 print ("check: " + IP_R_username)
 
 #Investment Portfolio Service credentials
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-IP_W_username=os.environ.get("CRED_PORTFOLIO_USERID_W")
-IP_W_password=os.environ.get("CRED_PORTFOLIO_PWD_W")
-IP_R_username=os.environ.get("CRED_PORTFOLIO_USERID_R")
-IP_R_password=os.environ.get("CRED_PORTFOLIO_PWD_R")
+if 'VCAP_SERVICES' in os.environ:
+    vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
+    # Log the fact that we successfully found some service information.
+    print("Got vcap_servicesData\n")
+
+    # Look for the IP service instance.
+    IP_W_username=vcap_servicesData["fss-portfolio-service"]["credentials"]["writer"]["userid"]
+    IP_W_password=vcap_servicesData["fss-portfolio-service"]["credentials"]["writer"]["password"]
+    IP_R_username=vcap_servicesData["fss-portfolio-service"]["credentials"]["reader"]["userid"]
+    IP_R_password=vcap_servicesData["fss-portfolio-service"]["credentials"]["reader"]["password"]
+
+    # Log the fact that we successfully found some Cloudant service information.
+    print("Got IP credentials\n")
+
+else:
+    load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+    IP_W_username=os.environ.get("CRED_PORTFOLIO_USERID_W")
+    IP_W_password=os.environ.get("CRED_PORTFOLIO_PWD_W")
+    IP_R_username=os.environ.get("CRED_PORTFOLIO_USERID_R")
+    IP_R_password=os.environ.get("CRED_PORTFOLIO_PWD_R")
 
 def Get_Portfolios():
     """
