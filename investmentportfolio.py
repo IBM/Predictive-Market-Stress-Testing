@@ -30,6 +30,7 @@ def Get_Portfolios():
     Retreives portfolio data by calling the Investment Portfolio service
     """
     print ("Get Portfolios")
+    print ("User name: " + IP_R_username)
     #call the url
     BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/"
     headers = {
