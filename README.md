@@ -1,6 +1,6 @@
 # Predictive Market Stress Testing
 
-In this developer journey, we will use three Bluemix finance services to create a web application which performs stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.
+In this developer journey, we will use three Bluemix finance services to create a web application which performs stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv file using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv file with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.
 
 When the reader has completed this journey, they will understand how to:
 
@@ -61,7 +61,7 @@ For all these steps:
 - replace {service-user-id} the user id associated with your Investment Portfolio Service
 - replace {service-user_password} with the password associated with your Investment Portfolio Service
 
-i. Creating a portfolio entry in your Portfolio Investment Service:
+i. Creating a portfolio entry in your Investment Portfolio service:
 
 `curl -X POST -u "{service-user-id}":"{service-user_password}" --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ "name":"MyFixedIncomePortfolio", "timestamp": "2017-02-22T19:53:56.830Z", "closed": false, "data": { "manager": "Will Smith" }}' 'https://investment-portfolio.mybluemix.net/api/v1/portfolios'`
 

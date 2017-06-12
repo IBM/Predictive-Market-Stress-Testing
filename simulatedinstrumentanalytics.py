@@ -23,15 +23,11 @@ if 'VCAP_SERVICES' in os.environ:
     vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
     # Log the fact that we successfully found some service information.
     print("Got vcap_servicesData\n")
-    #print(vcap_servicesData)
-
-    # Look for the SIA service instance.
+    # Look for the Simulated Instrument Analytics service instance
     access_token=vcap_servicesData['fss-scenario-analytics-service'][0]['credentials']['accessToken']
     uri=vcap_servicesData['fss-scenario-analytics-service'][0]['credentials']['uri']
-
     # Log the fact that we successfully found credentials
     print("Got SIA credentials\n")
-
 else:
     load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
     access_token=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_ACCESSTOKEN")

@@ -18,20 +18,16 @@ import argparse
 import os
 from dotenv import load_dotenv
 
-#Predictive Market Scenario credentials
+#Initalize Predictive Market Scenario credentials to find on Bluemix otherwise from .env file
 if 'VCAP_SERVICES' in os.environ:
     vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
     # Log the fact that we successfully found some service information.
     print("Got vcap_servicesData\n")
-    #print(vcap_servicesData)
-
-    # Look for the PMS service instance.
+    # Look for the Predictive Market Scenario service instance.
     access_token=vcap_servicesData['fss-predictive-scenario-analytics-service'][0]['credentials']['accessToken']
     uri=vcap_servicesData['fss-predictive-scenario-analytics-service'][0]['credentials']['uri']
-
     # Log the fact that we successfully found credentials
     print("Got PMS credentials\n")
-
 else:
     load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
     access_token=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_ACCESSTOKEN")
