@@ -18,9 +18,6 @@ import argparse
 from dotenv import load_dotenv
 import os
 
-IP_R_username="check"
-print ("check: " + IP_R_username)
-
 #Investment Portfolio Service credentials
 if 'VCAP_SERVICES' in os.environ:
     vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
@@ -34,7 +31,7 @@ if 'VCAP_SERVICES' in os.environ:
     IP_R_username=vcap_servicesData['fss-portfolio-service'][0]['credentials']['reader']['userid']
     IP_R_password=vcap_servicesData['fss-portfolio-service'][0]['credentials']['reader']['password']
 
-    # Log the fact that we successfully found some Cloudant service information.
+    # Log the fact that we successfully found credentials
     print("Got IP credentials\n")
 
 else:
@@ -49,7 +46,7 @@ def Get_Portfolios():
     Retreives portfolio data by calling the Investment Portfolio service
     """
     print ("Get Portfolios")
-    print ("User name: " + str(IP_R_username))
+
     #call the url
     BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/"
     headers = {

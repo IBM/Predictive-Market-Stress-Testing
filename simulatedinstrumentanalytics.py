@@ -19,9 +19,23 @@ import os
 from dotenv import load_dotenv
 
 #Simulated Instrument Analytics service credentials
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-access_token=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_ACCESSTOKEN")
-uri=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_URL")
+if 'VCAP_SERVICES' in os.environ:
+    vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
+    # Log the fact that we successfully found some service information.
+    print("Got vcap_servicesData\n")
+    #print(vcap_servicesData)
+
+    # Look for the SIA service instance.
+    access_token=vcap_servicesData['fss-scenario-analytics-service'][0]['credentials']['accessToken']
+    uri=vcap_servicesData['fss-portfolio-service'][0]['credentials']['uri']
+
+    # Log the fact that we successfully found credentials
+    print("Got SIA credentials\n")
+
+else:
+    load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+    access_token=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_ACCESSTOKEN")
+    uri=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_URL")
 
 def Compute_Simulated_Analytics(instrument_id, scenario_file = "output_PMS.csv"):
     """
@@ -33,7 +47,8 @@ def Compute_Simulated_Analytics(instrument_id, scenario_file = "output_PMS.csv")
     print("Scenario File: " + scenario_file)
 
     #call the url
-    BASEURL = uri + instrument_id
+    #BASEURL = uri + instrument_id
+    BASEURL = 'https://fss-analytics.mybluemix.net/api/v1/scenario/instrument/'  + instrument_id
     headers = {
         'enctype': "multipart/form-data",
         'x-ibm-access-token': access_token

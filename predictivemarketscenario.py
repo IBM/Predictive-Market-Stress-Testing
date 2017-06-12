@@ -19,9 +19,23 @@ import os
 from dotenv import load_dotenv
 
 #Predictive Market Scenario credentials
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-access_token=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_ACCESSTOKEN")
-uri=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_URL")
+if 'VCAP_SERVICES' in os.environ:
+    vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
+    # Log the fact that we successfully found some service information.
+    print("Got vcap_servicesData\n")
+    #print(vcap_servicesData)
+
+    # Look for the PMS service instance.
+    access_token=vcap_servicesData['fss-predictive-scenario-analytics-service'][0]['credentials']['accessToken']
+    uri=vcap_servicesData['fss-portfolio-service'][0]['credentials']['uri']
+
+    # Log the fact that we successfully found credentials
+    print("Got PMS credentials\n")
+
+else:
+    load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+    access_token=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_ACCESSTOKEN")
+    uri=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_URL")
 
 def Generate_Scenario(risk_factor_id, shock_value):
     """
@@ -32,7 +46,8 @@ def Generate_Scenario(risk_factor_id, shock_value):
     print ("Risk factor: " + risk_factor_id)
     print ("Shock Value: " + str(shock_value))
     #call the url
-    BASEURL = uri
+    #BASEURL = uri
+    BASEURL = https://fss-analytics.mybluemix.net/api/v1/scenario/generate_predictive
     headers = {
         'X-IBM-Access-Token': access_token,
         'Content-Type': "application/json"
