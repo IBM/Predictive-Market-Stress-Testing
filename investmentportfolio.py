@@ -19,7 +19,7 @@ from dotenv import load_dotenv
 import os
 
 IP_R_username="check"
-print ("User name: " + IP_R_username)
+print ("check: " + IP_R_username)
 
 #Investment Portfolio Service credentials
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
