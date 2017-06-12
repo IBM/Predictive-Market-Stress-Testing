@@ -19,7 +19,7 @@ When the reader has completed this journey, they will understand how to:
 
 # Deploy to Bluemix
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/raheelzubairy/Predictive-Market-Stress-Testing)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Predictive-Market-Stress-Testing)
 
 Be sure to [load investment portfolio](#3-load-investment-portfolio) before running the application.
 
@@ -42,7 +42,7 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 Clone the `Predictive-Market-Stress-Testing code` locally. In a terminal, run:
 
-  `$ git clone https://github.com/raheelzubairy/Predictive-Market-Stress-Testing.git`
+  `$ git clone https://github.com/IBM/Predictive-Market-Stress-Testing.git`
 
 
 ## 2. Create Bluemix services
@@ -136,7 +136,7 @@ The `.env` file will look something like the following:
 cd into this project's root directory
 + Run `pip install -r requirements.txt` to install the app's dependencies
 + Run `python run.py`
-+ Access the running app in a browser at <http://localhost:5000>
++ Access the running app in a browser at <http://0.0.0.0:8080/>
 
 # Troubleshooting
 
