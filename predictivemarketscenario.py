@@ -47,7 +47,7 @@ def Generate_Scenario(risk_factor_id, shock_value):
     print ("Shock Value: " + str(shock_value))
     #call the url
     #BASEURL = uri
-    BASEURL = https://fss-analytics.mybluemix.net/api/v1/scenario/generate_predictive
+    BASEURL = 'https://fss-analytics.mybluemix.net/api/v1/scenario/generate_predictive'
     headers = {
         'X-IBM-Access-Token': access_token,
         'Content-Type': "application/json"
