@@ -96,7 +96,7 @@ def api_analyze():
         #run Predictive Market Scenario service
         PMS_status = predictivemarketscenario.Generate_Scenario(riskfactor, shockmag)
         #if error in the call, return with error
-        if PMS_status != 200:            
+        if PMS_status != 200:
             print("Unable to create csv from Predictive Market Scenario service")
             return json.dumps({'error': str(PMS_status) + " Unable to create csv from Predictive Market Scenario service"})
         print ("CREATED CSV")
@@ -169,7 +169,9 @@ def get_market_conditions(filename):
                             market_conditions.append(obj)
     return market_conditions
 
+port = int(os.getenv('VCAP_APP_PORT', 8080))
+host='0.0.0.0'
 
-port = os.getenv('PORT', '5000')
+#port = os.getenv('PORT', '5000')
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', port=int(port))

@@ -1,6 +1,6 @@
 # Predictive Market Stress Testing
 
-In this developer journey, we will use three Bluemix finance services to create a web application which performs stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.
+In this developer journey, we will use three Bluemix finance services to create a web application which performs stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv file using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv file with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.
 
 When the reader has completed this journey, they will understand how to:
 
@@ -9,7 +9,7 @@ When the reader has completed this journey, they will understand how to:
 * Send data along with a scenario to the Simulated Instrument Analytics service to retrieve analytics
 
 <p align="center">
-  <img width="500" height="300" src="static/images/architecture.png">
+  <img width="400" height="400" src="static/images/architecture.png">
 </p>
 
 ## Included Components
@@ -19,9 +19,9 @@ When the reader has completed this journey, they will understand how to:
 
 # Deploy to Bluemix
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/raheelzubairy/Predictive-Market-Stress-Testing)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Predictive-Market-Stress-Testing)
 
-Be sure to [load investment profile](#3-load-investment-portfolio) before running the application.
+Be sure to [load investment portfolio](#3-load-investment-portfolio) before running the application.
 
 # Running the Application
 Follow these steps to setup and run this developer journey. The steps are described in detail below.
@@ -42,7 +42,7 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 Clone the `Predictive-Market-Stress-Testing code` locally. In a terminal, run:
 
-  `$ git clone https://github.com/raheelzubairy/Predictive-Market-Stress-Testing.git`
+  `$ git clone https://github.com/IBM/Predictive-Market-Stress-Testing.git`
 
 
 ## 2. Create Bluemix services
@@ -61,13 +61,13 @@ For all these steps:
 - replace {service-user-id} the user id associated with your Investment Portfolio Service
 - replace {service-user_password} with the password associated with your Investment Portfolio Service
 
-i. Creating a portfolio entry in your Portfolio Investment Service:
+i. Creating a portfolio entry in your Investment Portfolio service:
 
-`curl -X POST -u "{service-user-id}":"{service-user_password}" --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ "name":"Portfolio1", "timestamp": "2017-02-22T19:53:56.830Z", "closed": false, "data": { "manager": "Will Smith" }}' 'https://investment-portfolio.mybluemix.net/api/v1/portfolios'`
+`curl -X POST -u "{service-user-id}":"{service-user_password}" --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ "name":"MyFixedIncomePortfolio", "timestamp": "2017-02-22T19:53:56.830Z", "closed": false, "data": { "manager": "Will Smith" }}' 'https://investment-portfolio.mybluemix.net/api/v1/portfolios'`
 
 ii. Creating holdings in your entry:
 
-`curl -X POST -u "{service-user-id}":"{service-user_password}" --header 'Content-Type: application/json' --header 'Accept:application/json' -d '{ "timestamp": "2017-05-02T19:53:56.830Z", "holdings": [ { "asset": "AMGN", "quantity": 1000, "instrumentId": "CX_US031162BG42_USD"}, { "asset": "APC", "quantity": 3000, "instrumentId": "CX_US032511BM81_USD" }, { "asset": "ABIBB", "quantity": 2500, "instrumentId": "CX_US035242AJ52_USD" } ] }' 'https://investment-portfolio.mybluemix.net/api/v1/portfolios/Portfolio1/holdings'`
+`curl -X POST -u "{service-user-id}":"{service-user_password}" --header 'Content-Type: application/json' --header 'Accept:application/json' -d '{ "timestamp": "2017-06-04T19:53:56.830Z", "holdings": [ { "asset": "AMGN 4.1 06/15/21", "quantity": 10, "instrumentId": "CX_US031162BG42_USD", "companyName": "AMGEN INC"}, { "asset": "AMGN 5.15 11/15/41", "quantity": 30, "instrumentId": "CX_US031162BK53_USD", "companyName": "AMGEN INC" }, { "asset": "EVHC 5.625 07/15/22", "quantity": 50, "instrumentId": "CX_US03232PAD06_USD", "companyName": "ENVISION HEALTHCARE CORP"}, { "asset": "APC 4.85 03/15/21", "quantity": 40, "instrumentId": "CX_US032511BM81_USD", "companyName": "ANADARKO PETROLEUM CORP"}, { "asset": "ADI 3.5 12/05/26", "quantity": 30, "instrumentId": "CX_US032654AN54_USD", "companyName": "ANALOG DEVICES INC"}, { "asset": "ABIBB 2.65 02/01/21", "quantity": 20, "instrumentId": "CX_US035242AJ52_USD", "companyName": "ANHEUSER-BUSCH INBEV FIN"}, { "asset": "ABIBB 3.3 02/01/23", "quantity": 10, "instrumentId": "CX_US035242AL09_USD", "companyName": "ANHEUSER-BUSCH INBEV FIN"} ] }' 'https://investment-portfolio.mybluemix.net/api/v1/portfolios/MyFixedIncomePortfolio/holdings'`
 
 Find more information on Investment Portfolio api calls [here](https://console.ng.bluemix.net/apidocs/751-investment-portfolio?&language=node#introduction).
 
@@ -136,7 +136,7 @@ The `.env` file will look something like the following:
 cd into this project's root directory
 + Run `pip install -r requirements.txt` to install the app's dependencies
 + Run `python run.py`
-+ Access the running app in a browser at <http://localhost:5000>
++ Access the running app in a browser at <http://0.0.0.0:8080/>
 
 # Troubleshooting
 
