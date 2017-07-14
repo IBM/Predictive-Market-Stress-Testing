@@ -106,8 +106,7 @@ def api_analyze():
 
         #go through each holding in the portfolio
         asset_output = []
-        for holdings in holdings_data["holdings"]:
-            for holding in holdings["holdings"]:
+        for holding in holdings_data["holdings"][-1]["holdings"]:
 
                 #call the simulatedinstrumentanalytics module
                 data = simulatedinstrumentanalytics.Compute_Simulated_Analytics(instrument_id=holding["instrumentId"])
