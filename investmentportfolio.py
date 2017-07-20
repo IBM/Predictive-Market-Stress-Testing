@@ -62,7 +62,7 @@ def Get_Portfolio_Holdings(Portfolio):
     """
     print ("Get Portfolio Holdings for " + Portfolio)
     #construct the url
-    BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/" + Portfolio + "/holdings"
+    BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/" + Portfolio + "/holdings?latest=true"
     #call the url
     headers = {
         'accept': "application/json",
