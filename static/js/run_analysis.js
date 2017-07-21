@@ -1,4 +1,4 @@
-var apiUrl = window.location + "api/";
+var apiUrl = location.protocol + '//' + location.host + location.pathname + "api/";
 
 //check user input and process, generate result in tables
 $('.run-analysis.Button').click(function(){
