@@ -54,10 +54,8 @@ def api_portfolionames():
     Collects and returns the portfolio names
     """
     #get the portfolio names the from investmentportfolio module
-    portfolio_names = []
-    data = investmentportfolio.Get_Portfolios()
-    for portfolios in data['portfolios']:
-        portfolio_names.append(portfolios['name'])
+    portfolio_names = [portfolio['name'] for portfolio
+		      in investmentportfolio.Get_Portfolios()]
     #returns the portfolio names as list
     print("Portfolio_names:" + str(portfolio_names))
     return json.dumps(portfolio_names)
@@ -112,7 +110,7 @@ def api_analyze():
                 data = simulatedinstrumentanalytics.Compute_Simulated_Analytics(instrument_id=holding["instrumentId"])
 
                 #if returned as json would mean error, assign N/A, else assing the values from the list of objects
-                if (type(data) is dict):
+                if isinstance(data, dict):
                     value1 = "N/A"
                     value2 = "N/A"
                 else:
@@ -173,4 +171,4 @@ host='0.0.0.0'
 
 #port = os.getenv('PORT', '5000')
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=int(port))
+	app.run(host=host, port=int(port))
