@@ -1,4 +1,4 @@
-var apiUrl = window.location + "api/";
+var apiUrl = location.protocol + '//' + location.host + location.pathname + "api/";
 
 //update interface with portfolios and risk factors
 function updateText() {
