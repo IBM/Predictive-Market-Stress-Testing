@@ -29,7 +29,7 @@ if 'VCAP_SERVICES' in os.environ:
     # Log the fact that we successfully found credentials
     print("Got PMS credentials\n")
 else:
-    load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+    load_dotenv(os.path.join(os.path.dirname(__file__), "credentials.json"))
     access_token=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_ACCESSTOKEN")
     uri=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_URL")
 
