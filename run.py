@@ -166,9 +166,9 @@ def get_market_conditions(filename):
                             market_conditions.append(obj)
     return market_conditions
 
-port = int(os.getenv('VCAP_APP_PORT', 8080))
+port = int(os.getenv('VCAP_APP_PORT', 3000))
 host='0.0.0.0'
 
-#port = os.getenv('PORT', '5000')
+#port = os.getenv('PORT', '3000')
 if __name__ == "__main__":
 	app.run(host=host, port=int(port))
