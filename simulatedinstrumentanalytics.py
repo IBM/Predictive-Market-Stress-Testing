@@ -29,7 +29,7 @@ if 'VCAP_SERVICES' in os.environ:
     # Log the fact that we successfully found credentials
     print("Got SIA credentials\n")
 else:
-    load_dotenv(os.path.join(os.path.dirname(__file__), "credentials.json"))
+    load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
     access_token=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_ACCESSTOKEN")
     uri=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_URL")
 
