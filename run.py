@@ -54,8 +54,10 @@ def api_portfolionames():
     Collects and returns the portfolio names
     """
     #get the portfolio names the from investmentportfolio module
-    portfolio_names = [portfolio['name'] for portfolio
-		      in investmentportfolio.Get_Portfolios()]
+    portfolio_names = []
+    data = investmentportfolio.Get_Portfolios()
+    for portfolios in data['portfolios']:
+        portfolio_names.append(portfolios['name'])
     #returns the portfolio names as list
     print("Portfolio_names:" + str(portfolio_names))
     return json.dumps(portfolio_names)
