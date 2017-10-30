@@ -1,3 +1,5 @@
+![Bluemix Deployments](https://metrics-tracker.mybluemix.net/stats/07ed9a9864925f6dcb2c9d5849c329fc/badge.svg)
+
 # Predictive Market Stress Testing
 
 In this developer journey, we will use three Bluemix finance services to create a web application which performs stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv file using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv file with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.
@@ -19,7 +21,7 @@ When the reader has completed this journey, they will understand how to:
 
 # Deploy to Bluemix
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Predictive-Market-Stress-Testing)
+[![Deploy to Bluemix](https://metrics-tracker.mybluemix.net/stats/07ed9a9864925f6dcb2c9d5849c329fc/button.svg)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Predictive-Market-Stress-Testing)
 
 Be sure to [load investment portfolio](#3-load-investment-portfolio) before running the application.
 
