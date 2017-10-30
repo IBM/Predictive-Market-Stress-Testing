@@ -1,0 +1,11 @@
+id: Predictive-Market-Stress-Testing
+event_id: web
+event_organizer: dev-journeys
+runtimes: 
+  - Cloud Foundry
+services: 
+  - Investment Portfolio
+  - Predictive Market Scenarios
+  - Simulated Instrument Analytics
+language:
+  - python
