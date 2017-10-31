@@ -1,3 +1,5 @@
+![Bluemix Deployments](https://metrics-tracker.mybluemix.net/stats/07ed9a9864925f6dcb2c9d5849c329fc/badge.svg)
+
 # Predictive Market Stress Testing
 
 In this developer journey, we will use three Bluemix finance services to create a web application which performs stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv file using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv file with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.
@@ -19,7 +21,7 @@ When the reader has completed this journey, they will understand how to:
 
 # Deploy to Bluemix
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Predictive-Market-Stress-Testing)
+[![Deploy to Bluemix](https://metrics-tracker.mybluemix.net/stats/07ed9a9864925f6dcb2c9d5849c329fc/button.svg)](https://bluemix.net/devops/setup/deploy?repository=https://github.com/IBM/Predictive-Market-Stress-Testing)
 
 Be sure to [load investment portfolio](#3-load-investment-portfolio) before running the application.
 
@@ -153,6 +155,30 @@ python InvestmentPortfolio.py
 python PredictiveMarketScenario.py
 python SimulatedInstrumentAnalytics.py
 ```
+
+## Privacy Notice
+
+Sample web applications that include this package may be configured to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
+
+* Python package version
+* Python repository URL
+* Application Name (`application_name`)
+* Application GUID (`application_id`)
+* Application instance index number (`instance_index`)
+* Space ID (`space_id`) or OS username
+* Application Version (`application_version`)
+* Application URIs (`application_uris`)
+* Cloud Foundry API (`cf_api`)
+* Labels and names of bound services
+* Number of instances for each bound service and associated plan information
+* Metadata in the repository.yaml file
+
+This data is collected from the `setup.py` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
+
+## Disabling Deployment Tracking
+
+To disable tracking, simply remove ``metrics_tracker_client.track()`` from the
+``run.py`` file in the top level directory.
 
 # License
 
