@@ -97,43 +97,81 @@
     </div>
 
     <div class="wii-info tab">
-      <div class="wii-info__text">
-        <h1>
-                        Predictive Market Stress Testing allows a user to generate a correlated market stress test and analyze the impact against an investment portfolio
-                    </h1>
-      </div>
-
       <div class="wii-info__tiles">
         <h3>
-                        Services Used
-                    </h3>
+            Services that made this possible
+        </h3>
         <div class="wii-tile">
+
           <div class="icon-bubble">
+            <a href="https://console.bluemix.net/catalog/services/investment-portfolio" target="_blank">
             <img src="{{ url_for('static', filename='images/icons/portfolio_service.svg') }}" alt="portfolio service">
+            </a>
           </div>
           <p>
             Investment Portfolio
           </p>
+
+
         </div>
         <div class="wii-tile">
           <div class="icon-bubble">
-            <img src="{{ url_for('static', filename='images/icons/price_and_analytics_under_stress.svg') }}" alt="price and analytics under stress">
+            <a href="https://console.bluemix.net/catalog/services/simulated-instrument-analytics" target="_blank">
+              <img src="{{ url_for('static', filename='images/icons/price_and_analytics_under_stress.svg') }}" alt="simulated instrument analytics">
+            </a>
           </div>
           <p>
             Simulated Instrument Analytics
           </p>
         </div>
+
+      <div class="wii-tile">
+        <div class="icon-bubble">
+          <a href="https://console.bluemix.net/catalog/services/predictive-market-scenarios" target="_blank">
+            <img src="{{ url_for('static', filename='images/icons/Predictive_Market_Scenario_64x64.svg') }}" alt="predictive market scenarios">
+          </a>
+        </div>
+        <p>
+          Predictive Market Scenarios
+        </p>
+      </div>
+    </div>
+
+      <div class="wii-info__text">
+        <h3>
+          What you can do next
+          <p></p>
+        </h3>
+
         <div class="wii-tile">
-          <div class="icon-bubble">
-            <img src="{{ url_for('static', filename='images/icons/Predictive_Market_Scenario_64x64.svg') }}" alt="price and analytics under stress">
-          </div>
+          <a href="https://portfolio-optimize.mybluemix.net" target="_blank">
+            Rebalance your portfolio
+          </a>
           <p>
-            Predictive Market Scenarios
+              Rebalance an investment portfolio based on a wide range of objectives and investor preferences such as avoiding sin stocks, focusing on socially responsible investments, or limiting contribution to asset classes, all while minimizing the overall volatility with respect to a benchmark.
           </p>
         </div>
 
+        <div class="wii-tile">
+          <a href="https://wealth-management-chatbot-1.mybluemix.net/demo.html" target="_blank">
+            Chat with Watson about your holdings
+          </a>
+          <p>
+              Speak with a conversational agent to ask questions about investment returns, relevant news, and predictive analysis.
+          </p>
+        </div>
+       
+        <div class="wii-tile">
+          <a href="https://integrate-investment-portfolio.mybluemix.net/">
+            Build a new portfolio
+          </a>
+          <p>
+              Import a new portfolio from your personal brokerage using Quovo.
+          </p>
+        </div>
       </div>
     </div>
+  </div>
 
     <div class="tab-content">
       <div class="tab tab-one" id="tab-one">

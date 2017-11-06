@@ -4046,6 +4046,9 @@ body {
         font-weight: 300;
         padding-right: 24px;
         line-height: 1.15; }
+        .sandboxtwo .wii-info__text a {
+          color: #2e6f48;
+         }
     .sandboxtwo .wii-info__tiles {
       -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
