@@ -138,7 +138,7 @@ The `.env` file will look something like the following:
 cd into this project's root directory
 + Run `pip install -r requirements.txt` to install the app's dependencies
 + Run `python run.py`
-+ Access the running app in a browser at <http://0.0.0.0:8080/>
++ Access the running app in a browser at <http://0.0.0.0:3000/>
 
 # Troubleshooting
 
