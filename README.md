@@ -171,7 +171,7 @@ Sample web applications that include this package may be configured to track dep
 * Cloud Foundry API (`cf_api`)
 * Labels and names of bound services
 * Number of instances for each bound service and associated plan information
-* Metadata in the repository.yaml file
+* Metadata in the `repository.yaml` file
 
 This data is collected from the `setup.py` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
