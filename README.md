@@ -73,6 +73,30 @@ ii. Creating holdings in your entry:
 
 Find more information on Investment Portfolio api calls [here](https://console.ng.bluemix.net/apidocs/751-investment-portfolio?&language=node#introduction).
 
+**For Windows**
+
+For windows, curl commands cannot include single quotes so provide json data as a separate file.
+
+i. For creating a portfolio entry, create a json txt file for data and save it i.e `json.txt`
+```
+{ "name":"MyFixedIncomePortfolio", "timestamp": "2017-02-22T19:53:56.830Z", "closed": false, "data": { "manager": "Will Smith" }}
+```
+
+And then run then the curl command:
+```
+curl -X POST -u "{service-user-id}":"{service-user_password}" --header "Content-Type: application/json" --header "Accept: application/json" -d @json.txt https://investment-portfolio.mybluemix.net/api/v1/portfolios
+```
+
+ii. Similarly for creating holdings create a json txt file for data i.e `json_holdings.txt`
+```
+{ "timestamp": "2017-06-04T19:53:56.830Z", "holdings": [ { "asset": "AMGN 4.1 06/15/21", "quantity": 10, "instrumentId": "CX_US031162BG42_USD", "companyName": "AMGEN INC"}, { "asset": "AMGN 5.15 11/15/41", "quantity": 30, "instrumentId": "CX_US031162BK53_USD", "companyName": "AMGEN INC" }, { "asset": "EVHC 5.625 07/15/22", "quantity": 50, "instrumentId": "CX_US03232PAD06_USD", "companyName": "ENVISION HEALTHCARE CORP"}, { "asset": "APC 4.85 03/15/21", "quantity": 40, "instrumentId": "CX_US032511BM81_USD", "companyName": "ANADARKO PETROLEUM CORP"}, { "asset": "ADI 3.5 12/05/26", "quantity": 30, "instrumentId": "CX_US032654AN54_USD", "companyName": "ANALOG DEVICES INC"}, { "asset": "ABIBB 2.65 02/01/21", "quantity": 20, "instrumentId": "CX_US035242AJ52_USD", "companyName": "ANHEUSER-BUSCH INBEV FIN"}, { "asset": "ABIBB 3.3 02/01/23", "quantity": 10, "instrumentId": "CX_US035242AL09_USD", "companyName": "ANHEUSER-BUSCH INBEV FIN"} ] }
+```
+
+and run the curl command:
+```
+curl -X POST -u "{service-user-id}":"{service-user_password}" --header "Content-Type: application/json" --header "Accept:application/json" -d json_holdings.txt https://investment-portfolio.mybluemix.net/api/v1/portfolios/MyFixedIncomePortfolio/holdings`
+```
+
 ## 4. Configure Manifest file
 
 Edit the `manifest.yml` file in the folder that contains your code and replace with a unique name for your application. The name that you specify determines the application's URL, such as `your-application-name.mybluemix.net`. Additionally - update the service names so they match what you have in Bluemix. The relevant portion of the `manifest.yml` file looks like the following:
@@ -155,6 +179,9 @@ python InvestmentPortfolio.py
 python PredictiveMarketScenario.py
 python SimulatedInstrumentAnalytics.py
 ```
+
+* If you receive ssl error running curl commands try `curl --insecure` which removes certificate verification
+
 
 ## Privacy Notice
 
