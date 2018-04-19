@@ -14,10 +14,13 @@ This code pattern is designed for developers with interest in creating financial
   <img width="400" height="400" src="static/images/architecture.png">
 </p>
 
-## Included IBM Cloud Components
-+ Investment Portfolio
-+ Predictive Market Scenario
-+ Simulated Instrument Analytics
+## Included Components
+
+Offered on IBM Cloud:
+
++ [Investment Portfolio service](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
++ [Predictive Market Scenario service](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
++ [Simulated Instrument Analytics service](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
 
 # Deploy to IBM Cloud
 
