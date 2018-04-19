@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
 from flask import Flask, jsonify, render_template, json, Response, request
+import os
 import requests
 import csv
 
@@ -56,9 +56,10 @@ def api_portfolionames():
     """
     #get the portfolio names the from investmentportfolio module
     portfolio_names = []
-    data = investmentportfolio.Get_Portfolios()
+    data = investmentportfolio.get_portfolios()
     for portfolios in data['portfolios']:
         portfolio_names.append(portfolios['name'])
+
     #returns the portfolio names as list
     print("Portfolio_names:" + str(portfolio_names))
     return json.dumps(portfolio_names)
@@ -95,7 +96,7 @@ def api_analyze():
         print("retreived data: " + str(portfolio) + " | " + str(riskfactor) + " | " + str(shockmag))
 
         #run Predictive Market Scenario service
-        PMS_status = predictivemarketscenario.Generate_Scenario(riskfactor, shockmag)
+        PMS_status = predictivemarketscenario.generate_scenario(riskfactor, shockmag)
         #if error in the call, return with error
         if PMS_status != 200:
             print("Unable to create csv from Predictive Market Scenario service")
@@ -103,14 +104,14 @@ def api_analyze():
         print ("CREATED CSV")
 
         #get holdings data
-        holdings_data = investmentportfolio.Get_Portfolio_Holdings(portfolio)
+        holdings_data = investmentportfolio.get_portfolio_holdings(portfolio)
 
         #go through each holding in the portfolio
         asset_output = []
         for holding in holdings_data["holdings"][-1]["holdings"]:
 
                 #call the simulatedinstrumentanalytics module
-                data = simulatedinstrumentanalytics.Compute_Simulated_Analytics(instrument_id=holding["instrumentId"])
+                data = simulatedinstrumentanalytics.compute_simulated_analytics(instrument_id=holding["instrumentId"])
 
                 #if returned as json would mean error, assign N/A, else assing the values from the list of objects
                 if isinstance(data, dict):
@@ -133,7 +134,6 @@ def api_analyze():
                     'BaseVal': value1,
                     'NewVal': value2
                 }
-                #print (obj)
                 asset_output.append(obj)
 
         #get the market_conditions as list
@@ -143,7 +143,7 @@ def api_analyze():
         #create the output json
         output = {"holdingsInfo": asset_output, "marketConditions": market_conditions}
 
-    return (json.dumps(output))
+    return json.dumps(output)
 
 
 def get_market_conditions(filename):
@@ -152,14 +152,17 @@ def get_market_conditions(filename):
     """
     market_conditions = []
     print("Generate conditions")
+
     #open the csv file to be read
     with open(filename) as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
+
         #loop through each row to check with the risk factor and get the stress shift
         for row in readCSV:
             if len(row) > 14:
                 risk_factor_csv = row[5]
                 stress_shift_csv = row[13]
+
                 #check risk factor and get the stress shift
                 for rf in riskfactors:
                     for key in rf:
@@ -172,7 +175,6 @@ def get_market_conditions(filename):
 port = int(os.getenv('VCAP_APP_PORT', 3000))
 host='0.0.0.0'
 
-#port = os.getenv('PORT', '3000')
 if __name__ == "__main__":
     metrics_tracker_client.track()
     app.run(host=host, port=int(port))

@@ -18,14 +18,18 @@ import argparse
 import os
 from dotenv import load_dotenv
 
-#Simulated Instrument Analytics service credentials
+#initalize Simulated Instrument Analytics service credentials
 if 'VCAP_SERVICES' in os.environ:
-    vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
-    # Log the fact that we successfully found some service information.
-    print("Got vcap_servicesData\n")
-    # Look for the Simulated Instrument Analytics service instance
-    access_token=vcap_servicesData['fss-scenario-analytics-service'][0]['credentials']['accessToken']
-    uri=vcap_servicesData['fss-scenario-analytics-service'][0]['credentials']['uri']
+    #load vcap service data from the app env
+    vcap_services_data = json.loads(os.environ['VCAP_SERVICES'])
+
+    #log the fact that we successfully found some service information.
+    print("Got vcap_services_data\n")
+
+    #look for the Simulated Instrument Analytics service instance
+    access_token=vcap_services_data['fss-scenario-analytics-service'][0]['credentials']['accessToken']
+    uri=vcap_services_data['fss-scenario-analytics-service'][0]['credentials']['uri']
+
     # Log the fact that we successfully found credentials
     print("Got SIA credentials\n")
 else:
@@ -33,7 +37,7 @@ else:
     access_token=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_ACCESSTOKEN")
     uri=os.environ.get("CRED_SIMULATED_INSTRUMENT_ANALYTICS_URL")
 
-def Compute_Simulated_Analytics(instrument_id, scenario_file = "output_PMS.csv"):
+def compute_simulated_analytics(instrument_id, scenario_file = "output_PMS.csv"):
     """
     Retreives the Simulated Instrument Analytics service data, pass the instrument_id and scernario file
     """
@@ -43,14 +47,13 @@ def Compute_Simulated_Analytics(instrument_id, scenario_file = "output_PMS.csv")
     print("Scenario File: " + scenario_file)
 
     #call the url
-    #BASEURL = uri + instrument_id
-    BASEURL = 'https://fss-analytics.mybluemix.net/api/v1/scenario/instrument/'  + instrument_id
+    baseurl = 'https://fss-analytics.mybluemix.net/api/v1/scenario/instrument/'  + instrument_id
     headers = {
         'enctype': "multipart/form-data",
         'x-ibm-access-token': access_token
         }
     files = {'scenario_file': open(scenario_file, 'rb')}
-    get_data = requests.post(BASEURL, headers=headers, files=files)
+    get_data = requests.post(baseurl, headers=headers, files=files)
     print("Simulated Instrument Analytics status: " + str(get_data.status_code))
 
     #return json data
@@ -62,8 +65,7 @@ def main():
     """
     Can run this script to test Simulated Instrument Analytics service
     """
-    #Compute_Simulated_Analytics(instrument_id="CX_US4592001014_NYQ", scenario_file = "stresstests_sample.csv")
-    Compute_Simulated_Analytics(instrument_id="CX_US035242AJ52_USD")
+    compute_simulated_analytics(instrument_id="CX_US035242AJ52_USD")
 
 if __name__=="__main__":
     main()

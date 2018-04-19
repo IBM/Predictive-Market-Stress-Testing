@@ -18,32 +18,37 @@ import argparse
 import os
 from dotenv import load_dotenv
 
-#Initalize Predictive Market Scenario credentials to find on Bluemix otherwise from .env file
+#initalize Predictive Market Scenario credentials to find on Bluemix otherwise from .env file
 if 'VCAP_SERVICES' in os.environ:
-    vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
-    # Log the fact that we successfully found some service information.
-    print("Got vcap_servicesData\n")
-    # Look for the Predictive Market Scenario service instance.
-    access_token=vcap_servicesData['fss-predictive-scenario-analytics-service'][0]['credentials']['accessToken']
-    uri=vcap_servicesData['fss-predictive-scenario-analytics-service'][0]['credentials']['uri']
-    # Log the fact that we successfully found credentials
+    #load vcap service data from the app env
+    vcap_services_data = json.loads(os.environ['VCAP_SERVICES'])
+
+    #log the fact that we successfully found some service information.
+    print("Got vcap_services_data\n")
+
+    #look for the Predictive Market Scenario service instance.
+    access_token=vcap_services_data['fss-predictive-scenario-analytics-service'][0]['credentials']['accessToken']
+    uri=vcap_services_data['fss-predictive-scenario-analytics-service'][0]['credentials']['uri']
+
+    #log the fact that we successfully found credentials
     print("Got PMS credentials\n")
 else:
     load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
     access_token=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_ACCESSTOKEN")
     uri=os.environ.get("CRED_PREDICTIVE_MARKET_SCENARIO_URL")
 
-def Generate_Scenario(risk_factor_id, shock_value):
+
+def generate_scenario(risk_factor_id, shock_value):
     """
     Creates the 'output_PMS.csv' file with the scenario by calling the Predictive Market Service service, pass the risk_factor_id and shock_value
     """
-    #print for logging purpose
+    #print parameters
     print ("Generate Scenario")
     print ("Risk factor: " + risk_factor_id)
     print ("Shock Value: " + str(shock_value))
+
     #call the url
-    #BASEURL = uri
-    BASEURL = 'https://fss-analytics.mybluemix.net/api/v1/scenario/generate_predictive'
+    baseurl = 'https://fss-analytics.mybluemix.net/api/v1/scenario/generate_predictive'
     headers = {
         'X-IBM-Access-Token': access_token,
         'Content-Type': "application/json"
@@ -54,7 +59,7 @@ def Generate_Scenario(risk_factor_id, shock_value):
             'shock': shock_value
             }
         }
-    get_data = requests.post(BASEURL, headers=headers, data=json.dumps(data))
+    get_data = requests.post(baseurl, headers=headers, data=json.dumps(data))
     status = get_data.status_code
     print("Predictive Market Scenario status: " + str(status))
 
@@ -64,12 +69,11 @@ def Generate_Scenario(risk_factor_id, shock_value):
 
     #create csv file
     data = get_data.text
-    #print(data)
     f = open("output_PMS.csv", "w")
     f.write(data)
     f.close()
 
-    #print for logging purpose, return the status
+    #print and return the status
     print (os.path.exists("output_PMS.csv"))
     print("Created output_PMS.csv")
     return status
@@ -80,7 +84,7 @@ def main():
     """
     risk_factor_id = "CX_EQI_SPDJ_USA500_BMK_USD_LargeCap_Price"
     shock_value = 1.5
-    Generate_Scenario(risk_factor_id,shock_value)
+    generate_scenario(risk_factor_id,shock_value)
 
 if __name__=="__main__":
     main()

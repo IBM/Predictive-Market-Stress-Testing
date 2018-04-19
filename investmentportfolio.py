@@ -18,58 +18,65 @@ import argparse
 from dotenv import load_dotenv
 import os
 
-#Initalize Investment Portfolio Service credentials to find on Bluemix otherwise from .env file
+#initalize Investment Portfolio Service credentials to find on Bluemix otherwise from .env file
 if 'VCAP_SERVICES' in os.environ:
-    vcap_servicesData = json.loads(os.environ['VCAP_SERVICES'])
-    # Log the fact that we successfully found some service information.
-    print("Got vcap_servicesData\n")
-    #print(vcap_servicesData)
+    #load vcap service data from the app env
+    vcap_services_data = json.loads(os.environ['VCAP_SERVICES'])
+
+    #log the fact that we successfully found some service information.
+    print("Got vcap_services_data\n")
+
     # Look for the IP service instance.
-    IP_W_username=vcap_servicesData['fss-portfolio-service'][0]['credentials']['writer']['userid']
-    IP_W_password=vcap_servicesData['fss-portfolio-service'][0]['credentials']['writer']['password']
-    IP_R_username=vcap_servicesData['fss-portfolio-service'][0]['credentials']['reader']['userid']
-    IP_R_password=vcap_servicesData['fss-portfolio-service'][0]['credentials']['reader']['password']
-    # Log the fact that we successfully found credentials
+    IP_W_USERNAME=vcap_services_data['fss-portfolio-service'][0]['credentials']['writer']['userid']
+    IP_W_PASSWORD=vcap_services_data['fss-portfolio-service'][0]['credentials']['writer']['password']
+    IP_R_USERNAME=vcap_services_data['fss-portfolio-service'][0]['credentials']['reader']['userid']
+    IP_R_PASSWORD=vcap_services_data['fss-portfolio-service'][0]['credentials']['reader']['password']
+
+    #log the fact that we successfully found credentials
     print("Got IP credentials\n")
 else:
     load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-    IP_W_username=os.environ.get("CRED_PORTFOLIO_USERID_W")
-    IP_W_password=os.environ.get("CRED_PORTFOLIO_PWD_W")
-    IP_R_username=os.environ.get("CRED_PORTFOLIO_USERID_R")
-    IP_R_password=os.environ.get("CRED_PORTFOLIO_PWD_R")
+    IP_W_USERNAME=os.environ.get("CRED_PORTFOLIO_USERID_W")
+    IP_W_PASSWORD=os.environ.get("CRED_PORTFOLIO_PWD_W")
+    IP_R_USERNAME=os.environ.get("CRED_PORTFOLIO_USERID_R")
+    IP_R_PASSWORD=os.environ.get("CRED_PORTFOLIO_PWD_R")
 
-def Get_Portfolios():
+def get_portfolios():
     """
     Retreives portfolio data by calling the Investment Portfolio service
     """
     print ("Get Portfolios")
+
     #call the url
-    BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/"
+    baseurl = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/"
     headers = {
         'accept': "application/json",
         'content-type': "application/json"
         }
-    get_data = requests.get(BASEURL, auth=(IP_R_username, IP_R_password), headers=headers)
+    get_data = requests.get(baseurl, auth=(IP_R_USERNAME, IP_R_PASSWORD), headers=headers)
     print("Investment Portfolio status: " + str(get_data.status_code))
+
     # return json data
     data = get_data.json()
     print(data)
     return data
 
-def Get_Portfolio_Holdings(Portfolio):
+def get_portfolio_holdings(portfolio):
     """
     Retreives holdinga data from the Investment Portfolio service for the Portfolio
     """
-    print ("Get Portfolio Holdings for " + Portfolio)
+    print ("Get Portfolio Holdings for " + portfolio)
     #construct the url
-    BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/" + Portfolio + "/holdings?latest=true"
+    baseurl = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/" + portfolio + "/holdings?latest=true"
+
     #call the url
     headers = {
         'accept': "application/json",
         'content-type': "application/json"
         }
-    get_data = requests.get(BASEURL, auth=(IP_R_username, IP_R_password), headers=headers)
+    get_data = requests.get(baseurl, auth=(IP_R_USERNAME, IP_R_PASSWORD), headers=headers)
     print("Investment Portfolio - Get Portfolio Holdings status: " + str(get_data.status_code))
+
     #return json data
     data = get_data.json()
     print(data)
@@ -79,9 +86,8 @@ def main():
     """
     Can run this script to test Investment Portfolio service
     """
-    Get_Portfolios()
-    #Get_Portfolio_Holdings("P1")
-    Get_Portfolio_Holdings("MyFixedIncomePortfolio")
+    get_portfolios()
+    get_portfolio_holdings("MyFixedIncomePortfolio")
 
 if __name__=="__main__":
     main()
