@@ -16,7 +16,7 @@ This code pattern is designed for developers with interest in creating financial
 
 ## Included Components
 
-Offered on IBM Cloud:
+Offered on [IBM Cloud](https://console.bluemix.net/):
 
 + [Investment Portfolio service](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
 + [Predictive Market Scenario service](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
