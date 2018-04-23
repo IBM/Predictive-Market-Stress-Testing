@@ -18,9 +18,11 @@ This code pattern is designed for developers with interest in creating financial
 
 Offered on [IBM Cloud](https://console.bluemix.net/):
 
-+ [Investment Portfolio service](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
-+ [Predictive Market Scenario service](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
-+ [Simulated Instrument Analytics service](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
++ [Investment Portfolio](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
++ [Predictive Market Scenario](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
++ [Simulated Instrument Analytics](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
+
+**Note:** these services are free for those who have a Lite account
 
 # Deploy to IBM Cloud
 
@@ -168,7 +170,7 @@ The `.env` file will look something like the following:
 
 ## 6. Run Application
 
-cd into this project's root directory
+In your terminal, cd into this project's root directory
 + Run `pip install -r requirements.txt` to install the app's dependencies
 + Run `python run.py`
 + Access the running app in a browser at <http://0.0.0.0:3000/>
@@ -194,7 +196,7 @@ python SimulatedInstrumentAnalytics.py
 
 ## Privacy Notice
 
-Sample web applications that include this package may be configured to track deployments to [IBM Cloud](https://www.bluemix.net/) and other platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
+This web application includes metrics tracker package configured to track deployments to [IBM Cloud](https://www.bluemix.net/) and other platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
 
 * Python package version
 * Python repository URL
@@ -209,7 +211,7 @@ Sample web applications that include this package may be configured to track dep
 * Number of instances for each bound service and associated plan information
 * Metadata in the `repository.yaml` file
 
-This data is collected from the `setup.py` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
+This data is collected from the `run.py` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
 ## Disabling Deployment Tracking
 
