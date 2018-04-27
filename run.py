@@ -20,7 +20,6 @@ import csv
 import investmentportfolio
 import predictivemarketscenario
 import simulatedinstrumentanalytics
-import metrics_tracker_client
 
 app = Flask(__name__)
 
@@ -176,5 +175,4 @@ port = int(os.getenv('VCAP_APP_PORT', 3000))
 host='0.0.0.0'
 
 if __name__ == "__main__":
-    metrics_tracker_client.track()
     app.run(host=host, port=int(port))
