@@ -38,7 +38,7 @@ Follow these steps to setup and run this code pattern. The steps are described i
 - [Python](https://www.python.org/downloads/)
 - [curl](https://curl.haxx.se/download.html)
 - [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
-- [Cloud Foundary CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
+- [IBM Cloud CLI](https://console.bluemix.net/docs/cli)
 
 ## Steps
 1. [Clone the repo](#1-clone-the-repo)
@@ -179,7 +179,7 @@ In your terminal, cd into this project's root directory
 * To troubleshoot your IBM Cloud application, use the logs. To see the logs, run:
 
 ```bash
-cf logs <application-name> --recent
+bx logs <application-name> --recent
 ```
 
 * If you are running locally - inspect your environment variables closely to confirm they match.  Try running each service as standalone:
