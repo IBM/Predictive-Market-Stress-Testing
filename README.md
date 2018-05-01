@@ -174,6 +174,15 @@ In your terminal, cd into this project's root directory
 + Run `python run.py`
 + Access the running app in a browser at <http://0.0.0.0:3000/>
 
+You can push the app to IBM Cloud using [IBM Cloud CLI](https://console.bluemix.net/docs/cli). This will use the services and application name in the `manifest.yml` file.  From your root directory login into IBM Cloud using CLI:
+```
+bx login
+```
+And push the app to IBM Cloud:
+```
+bx push
+```
+
 # Troubleshooting
 
 * To troubleshoot your IBM Cloud application, use the logs. To see the logs, run:
