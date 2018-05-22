@@ -1,11 +1,11 @@
   declared-services:
-    Investment-Portfolio:
+    pmst-Investment-Portfolio:
       label: fss-portfolio-service
       plan: fss-portfolio-service-free-plan
-    Predictive-Market-Scenarios:
+    pmst-Predictive-Market-Scenarios:
       label: fss-predictive-scenario-analytics-service
       plan: fss-predictive-scenario-analytics-service-free-plan
-    Simulated-Instrument-Analytics:
+    pmst-Simulated-Instrument-Analytics:
       label: fss-scenario-analytics-service
       plan: fss-scenario-analytics-service-free-plan
   applications:
@@ -16,7 +16,7 @@
     disk_quota: 1024M
     domain: mybluemix.net
     services:
-    - Investment-Portfolio
-    - Predictive-Market-Scenarios
-    - Simulated-Instrument-Analytics
+    - pmst-Investment-Portfolio
+    - pmst-Predictive-Market-Scenarios
+    - pmst-Simulated-Instrument-Analytics
     buildpack: python_buildpack
