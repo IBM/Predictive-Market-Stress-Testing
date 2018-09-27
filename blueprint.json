@@ -1,34 +1,38 @@
 {
     "name": "Predictive Market Stress Testing",
-    "description": "In this developer journey, we will use three Bluemix finance services to create a web application which performs stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv file using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv file with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.",
+    "description": "Use IBM Cloud financial services to create a web application that performs stress tests on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario CSV file using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv file with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.",
     "thumbnailURL": "blueprint/thumbnail.svg",
     "appIconURL": "blueprint/appicon.svg",
-    "previewURLs": [],
     "type": "WEB",
     "tags": [
-        "finance"
+        "devex"
     ],
     "demoURL": "https://predictive-market-stress-testing.mybluemix.net/",
     "generators": {
         "python": [
             "generator-starterkit-content-downloader",
             "generator-ibm-cloud-enablement",
+            "generator-ibm-service-enablement",
             "generator-git-starterkit-credentials-builder"
         ]
     },
     "generatorOptions": {
         "generator-git-starterkit-credentials-builder": {
-            "registry": "https://npm-registry.whitewater.ibm.com",
-            "scope": "@arf",
-            "version": "0.0.5"
-        },
-        "generator-starterkit-content-downloader": {
-            "registry": "https://npm-registry.whitewater.ibm.com",
-            "scope": "@arf",
-            "version": "0.0.5"
+            "version": "0.x.x",
+            "scope": "@arf"
         },
         "generator-ibm-cloud-enablement": {
-            "version": "0.0.83"
+            "version": "1.0.x",
+            "options": {
+                "port": "3000"
+            }
+        },
+        "generator-ibm-service-enablement": {
+            "version": "2.3.x"
+        },
+        "generator-starterkit-content-downloader": {
+            "version": "0.x.x",
+            "scope": "@arf"
         }
     },
     "requiredCapabilities": [
