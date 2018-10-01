@@ -3,18 +3,5 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
-  - pip install flake8
-# Clone the repository that has the smart script for validating this repo against the registry
-# microservice (which itself validates against scaffolder, therefore Yeoman and SDKGen microservices).
-# It's the kitchen sink of validation!
-before_script:
-  - git clone -b v1 git@github.ibm.com:bluemix-mobile-services/bmd-devops-pipeline.git
-
-  # stop the build if there are Python syntax errors or undefined names
-  - time flake8 . --count --select=E901,E999,F821,F822,F823 --show-source --statistics
-  # exit-zero treats all errors as warnings.  The GitHub editor is 127 chars wide
-  - time flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-# command to run tests
 script:
-  - ./bmd-devops-pipeline/scripts/register-starter.sh $TRAVIS_BRANCH
-  - python run.py
+- python run.py & sleep 5; if curl http://localhost:8080; then echo “Test passed”; exit 0; else echo “Test failed”; exit 1; fi
