@@ -18,21 +18,21 @@
     },
     "generatorOptions": {
         "generator-git-starterkit-credentials-builder": {
-            "version": "0.x.x",
-            "scope": "@arf"
-        },
-        "generator-ibm-cloud-enablement": {
-            "version": "1.0.x",
-            "options": {
-                "port": "3000"
-            }
-        },
-        "generator-ibm-service-enablement": {
-            "version": "2.3.x"
+          "scope": "@arf",
+          "version": "0.x.x"
         },
         "generator-starterkit-content-downloader": {
-            "version": "0.x.x",
-            "scope": "@arf"
+          "scope": "@arf",
+          "version": "0.x.x"
+        },
+        "generator-ibm-cloud-enablement": {
+          "version": "1.0.8",
+          "options": {
+            "port": "3000"
+          }
+        },
+        "generator-ibm-service-enablement": {
+          "version": "2.4.x"
         }
     },
     "requiredCapabilities": [
