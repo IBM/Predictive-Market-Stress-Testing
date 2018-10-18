@@ -9,7 +9,7 @@ This code pattern is designed for developers with interest in creating financial
 * Send data along with a scenario to the Simulated Instrument Analytics service to retrieve analytics
 
 <p align="center">
-  <img width="400" height="400" src="static/images/architecture.png">
+  <img src="static/images/architecture.png">
 </p>
 
 ## Included Components
