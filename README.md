@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/IBM/Predictive-Market-Stress-Testing.svg?branch=master)](https://travis-ci.org/IBM/Predictive-Market-Stress-Testing)
 # Predictive Market Stress Testing
 
-In this code pattern, we will use three IBM Cloud finance services to create a web application which performs stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv file using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv file with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.
+In this code pattern, we will use three IBM Cloud finance services to create a web application which performs a stress test on an investment portfolio. The Investment Portfolio service is used to load the portfolio into the interface. The Predictive Market Scenario service will create a scenario csv file using risk factor and shock magnitude from user inputs. The Simulated Instrument Analytics service uses the scenario csv file with each holding in the portfolio to create a table displaying the current and stressed price of the investment holding.
 
 This code pattern is designed for developers with interest in creating financial applications pertaining to investment portfolios.  When the reader has completed this code pattern, they will understand how to:
 
