@@ -15,19 +15,19 @@ This code pattern is designed for developers with interest in creating financial
 
 ## Included Components
 
-Offered on [IBM Cloud](https://console.bluemix.net/):
+Offered on [IBM Cloud](https://cloud.ibm.com/):
 
-+ [Investment Portfolio](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
-+ [Predictive Market Scenario](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
-+ [Simulated Instrument Analytics](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
++ [Investment Portfolio](https://cloud.ibm.com/catalog/services/investment-portfolio)
++ [Predictive Market Scenario](https://cloud.ibm.com/catalog/services/predictive-market-scenarios)
++ [Simulated Instrument Analytics](https://cloud.ibm.com/catalog/services/predictive-market-scenarios)
 
 **Note:** these services are free for those who have a Lite account
 
 # Deploy to IBM Cloud
 
-Create an [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button bellow.
+Create an [IBM Cloud account](https://cloud.ibm.com/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button bellow.
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/Predictive-Market-Stress-Testing)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/Predictive-Market-Stress-Testing)
 
 
 Be sure to [load investment portfolio](#3-load-investment-portfolio) before running the application.
@@ -38,8 +38,8 @@ Follow these steps to setup and run this code pattern. The steps are described i
 ## Prerequisite
 - [Python](https://www.python.org/downloads/)
 - [curl](https://curl.haxx.se/download.html)
-- [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
-- [IBM Cloud CLI](https://console.bluemix.net/docs/cli)
+- [IBM Cloud account](https://cloud.ibm.com/registration/?target=%2Fdashboard%2Fapps)
+- [IBM Cloud CLI](https://cloud.ibm.com/docs/cli)
 
 ## Steps
 1. [Clone the repo](#1-clone-the-repo)
@@ -53,16 +53,16 @@ Follow these steps to setup and run this code pattern. The steps are described i
 
 Clone the `Predictive-Market-Stress-Testing code` locally. In a terminal, run:
 
-  `$ git clone https://github.com/IBM/Predictive-Market-Stress-Testing.git`
+  `$ git clone https://github.com/IBM/Predictive-Market-Stress-Testing`
 
 
 ## 2. Create IBM Cloud services
 
 Create the following services in IBM Cloud.  These services are part of either `Free` or `Experimental` plan.
 
-* [**Investment Portfolio**](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
-* [**Predictive Market Scenario**](https://console.ng.bluemix.net/catalog/services/predictive-market-scenarios)
-* [**Simulated Instrument Analytics**](https://console.ng.bluemix.net/catalog/services/simulated-instrument-analytics)
+* [**Investment Portfolio**](https://cloud.ibm.com/catalog/services/investment-portfolio)
+* [**Predictive Market Scenario**](https://cloud.ibm.com/catalog/services/predictive-market-scenarios)
+* [**Simulated Instrument Analytics**](https://cloud.ibm.com/catalog/services/simulated-instrument-analytics)
 
 
 ## 3. Load Investment Portfolio
@@ -82,7 +82,7 @@ ii. Creating holdings in your entry:
 
 `curl -X POST -u "{service-user-id}":"{service-user_password}" --header 'Content-Type: application/json' --header 'Accept:application/json' -d '{ "timestamp": "2017-06-04T19:53:56.830Z", "holdings": [ { "asset": "AMGN 4.1 06/15/21", "quantity": 10, "instrumentId": "CX_US031162BG42_USD", "companyName": "AMGEN INC"}, { "asset": "AMGN 5.15 11/15/41", "quantity": 30, "instrumentId": "CX_US031162BK53_USD", "companyName": "AMGEN INC" }, { "asset": "EVHC 5.625 07/15/22", "quantity": 50, "instrumentId": "CX_US03232PAD06_USD", "companyName": "ENVISION HEALTHCARE CORP"}, { "asset": "APC 4.85 03/15/21", "quantity": 40, "instrumentId": "CX_US032511BM81_USD", "companyName": "ANADARKO PETROLEUM CORP"}, { "asset": "ADI 3.5 12/05/26", "quantity": 30, "instrumentId": "CX_US032654AN54_USD", "companyName": "ANALOG DEVICES INC"}, { "asset": "ABIBB 2.65 02/01/21", "quantity": 20, "instrumentId": "CX_US035242AJ52_USD", "companyName": "ANHEUSER-BUSCH INBEV FIN"}, { "asset": "ABIBB 3.3 02/01/23", "quantity": 10, "instrumentId": "CX_US035242AL09_USD", "companyName": "ANHEUSER-BUSCH INBEV FIN"} ] }' 'https://investment-portfolio.mybluemix.net/api/v1/portfolios/MyFixedIncomePortfolio/holdings'`
 
-Find more information on Investment Portfolio api calls [here](https://console.ng.bluemix.net/apidocs/751-investment-portfolio?&language=node#introduction).
+Find more information on Investment Portfolio api calls [here](https://cloud.ibm.com/apidocs/751-investment-portfolio?&language=node#introduction).
 
 **For Windows**
 
@@ -145,7 +145,7 @@ Create a `.env` file in the root directory of your clone of the project reposito
   cp .env.example .env
   ```
 
-  **NOTE** Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://git-for-windows.github.io/) or [Xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy)
+  **NOTE** Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://gitforwindows.org/) or [Xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy)
 
 You will need to update the credentials with the IBM Cloud credentials for each of the services you created in [Step 2](#2-create-bluemix-services).
 
@@ -175,7 +175,7 @@ In your terminal, cd into this project's root directory
 + Run `python run.py`
 + Access the running app in a browser at <http://0.0.0.0:3000/>
 
-You can push the app to IBM Cloud using [IBM Cloud CLI](https://console.bluemix.net/docs/cli). This will use the services and application name in the `manifest.yml` file.  From your root directory login into IBM Cloud using CLI:
+You can push the app to IBM Cloud using [IBM Cloud CLI](https://cloud.ibm.com/docs/cli). This will use the services and application name in the `manifest.yml` file.  From your root directory login into IBM Cloud using CLI:
 ```
 bx login
 ```
@@ -205,6 +205,6 @@ python SimulatedInstrumentAnalytics.py
 
 # License
 
-This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
